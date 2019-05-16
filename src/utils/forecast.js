@@ -14,8 +14,11 @@ const forecast = (latitude, longitude, callback) => {
             return callback("Unable to find forecast for that location. Try another search!")
         }
 
-        const {temperature, precipProbability, summary} = body.currently;
-        callback(undefined, {temperature, precipProbability, summary });
+        console.log(body.daily.data[0]);
+
+        const {summary, temperatureHigh, temperatureLow} = body.daily.data[0];
+        const {temperature, precipProbability} = body.currently;
+        callback(undefined, {temperature, precipProbability, summary, temperatureHigh, temperatureLow });
 
     });
 }
