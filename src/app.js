@@ -70,7 +70,7 @@ app.get("/weather", (req, res) => {
             
             res.send({
                 location,
-                summary: `${summary} Temparature low with ${temperatureLow} degrees and temparature high with ${temperatureHigh} degrees. It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain.`,
+                summary: `${summary} Temparature high today is ${temperatureHigh} degrees and low today is ${temperatureLow} degrees. It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain.`,
                 address
             });
         });
